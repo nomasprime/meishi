@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES']='true'
 
 gem 'rails', '~> 3.2.14'
-
-gem 'sqlite3'
+gem 'json', '1.8.2'
+gem 'sqlite3', '1.3.13'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -19,8 +19,9 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'rspec-rails', '~> 2.6'
+  gem 'rspec-rails', '~> 3.9'
   gem 'machinist', '>= 2.0.0.beta2'
+  gem 'test-unit', '~> 3.0'
 end
 
 group :development do
@@ -31,7 +32,7 @@ end
 
 group :test do
   gem 'simplecov', :require => false
-  gem 'rake'
+  gem 'rake', '~> 10'
 end
 
 gem 'jquery-rails'

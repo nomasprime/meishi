@@ -23,7 +23,7 @@ describe AddressBooksController do
   end
   
   describe "POST create" do
-    pending "should return successfully" do
+    skip "should return successfully" do
       post :create
       response.should be_success
     end
@@ -48,20 +48,20 @@ describe AddressBooksController do
 
     it "should return successfully when provided with an address book belonging to the current user" do
       get :edit, {:id => '1'}
-      response.should be_success
+      expect(response).to be_success
     end
 
     it "should return forbidden when provided with an address book not belonging to the current user" do
       get :edit, {:id => '2'}
-      response.should be_forbidden
+      expect(response).to be_forbidden
     end
 
   end
   
   describe "GET update" do
-    pending "should return successfully" do
+    skip "should return successfully" do
       get :new
-      response.should be_success
+      expect(response).to be_success
     end
   end
 
@@ -72,7 +72,7 @@ describe AddressBooksController do
 
     it "should return successfully" do
       get :show, {:id => '1'}
-      response.should be_success
+      expect(response).to be_success
     end
   end
 end

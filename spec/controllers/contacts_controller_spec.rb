@@ -15,7 +15,7 @@ describe ContactsController do
   end
   
   describe "GET create" do
-    pending "should return successfully" do
+    skip "should return successfully" do
       get :create
       response.should be_success
     end

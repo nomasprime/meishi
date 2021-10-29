@@ -7,7 +7,7 @@ describe ControlPanelController do
       get :index
 
       # With no users we should trip the "omg run the first_run rake task"
-      response.should be_forbidden
+      expect(response).to be_forbidden
     end
 
     it "should redirect if not logged in" do
@@ -17,7 +17,7 @@ describe ControlPanelController do
       get :index
 
       # We should redirect to the login page
-      response.should be_redirect
+      expect(response).to be_redirect
     end
 
     it "should be successful if logged in" do
@@ -26,7 +26,7 @@ describe ControlPanelController do
       # Don't use an empty string here, rspec or devise doesn't like it. -_-
       get :index
 
-      response.should be_success
+      expect(response).to be_success
     end
   end
 end
